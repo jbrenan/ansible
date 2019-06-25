@@ -1,0 +1,16 @@
+# vSphere related details
+vsphere_hostname: 10.0.11.50
+folder: /Templates
+datacenter: Datacenter
+cluster: Cluster
+template: dev-template7.6
+datastore: /datacenter/templates
+domain: idm.ddenet.local
+dns_servers:
+  - 10.0.11.110
+  - 10.1.1.30
+
+
+#Network
+net_name: VLAN213-10.13.213.0_24
+vlan: 213
