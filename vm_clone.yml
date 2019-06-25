@@ -4,19 +4,20 @@
 
   vars_files:
     - vars.yml
-  vars_prompt:
-    - name: vsphere_username
-      prompt: "Enter vSphere Username"
-      private: no
-    - name: vsphere_password
-      prompt: "Enter vSphere Password"
-      private: yes
-    - name: vm_name
-      prompt: "Enter the hostname for the VM"
-      private: no
-    - name: vm_ip
-      prompt: "Enter the IP for the VM"
-      private: no
+###Will be handled by survey in Tower    
+#  vars_prompt:
+#    - name: vsphere_username
+#      prompt: "Enter vSphere Username"
+#      private: no
+#    - name: vsphere_password
+#      prompt: "Enter vSphere Password"
+#      private: yes
+#    - name: vm_name
+#      prompt: "Enter the hostname for the VM"
+#      private: no
+#    - name: vm_ip
+#      prompt: "Enter the IP for the VM"
+#      private: no
 
   tasks:
   - name: vmware_linux_clone
