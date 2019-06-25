@@ -5,10 +5,6 @@ datacenter: Datacenter
 cluster: Cluster
 template: dev-template7.6
 datastore: /datacenter/templates
-domain: idm.ddenet.local
-dns_servers:
-  - 10.0.11.110
-  - 10.1.1.30
 
 
 #Network
