@@ -1,0 +1,53 @@
+---
+- hosts: localhost
+  gather_facts: no
+
+  vars_files:
+    - vars.yml
+  vars_prompt:
+    - name: vsphere_username
+      prompt: "Enter vSphere Username"
+      private: no
+    - name: vsphere_password
+      prompt: "Enter vSphere Password"
+      private: yes
+    - name: vm_name
+      prompt: "Enter the hostname for the VM"
+      private: no
+    - name: vm_ip
+      prompt: "Enter the IP for the VM"
+      private: no
+
+  tasks:
+  - name: vmware_linux_clone
+    vmware_guest:
+      hostname: "{{ vsphere_hostname }}"
+      username: "{{ vsphere_username }}"
+      password: "{{ vsphere_password }}"
+      validate_certs: no
+      datacenter: "{{ datacenter }}"
+      state: poweredon
+      folder: "{{ folder }}"
+      template: "{{ template }}"
+      name: "{{ vm_name }}"
+      cluster: "{{ cluster }}"
+      networks:
+        - name: "{{ net_name }}"
+          vlan: "{{ vlan }}"
+          device_type: vmxnet3
+          dvswitch_name: INF-VDS
+          type: static
+          ip: "{{ vm_ip }}"
+          netmask: 255.255.255.0
+      wait_for_ip_address: no
+      customization:
+        hostname: "{{ vm_name }}"
+        domain: "{{ domain }}"
+        dns_servers:
+          - 10.0.11.110
+          - 10.1.1.30
+
+#      customization_spec: rhel-customization
+    delegate_to: localhost
+    tags:
+    - clone
