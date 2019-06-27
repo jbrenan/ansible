@@ -32,12 +32,13 @@
       template: "{{ template }}"
       name: "{{ vm_name }}"
       cluster: "{{ cluster }}"
+      datastore: "{{ datastore }}"
       networks:
         - name: "{{ net_name }}"
           vlan: "{{ vlan }}"
-          device_type: vmxnet3
-          dvswitch_name: INF-VDS
-          type: static
+          device_type: "{{ nic_device }}"
+          dvswitch_name: "{{ dvswitch_name }}"
+          type: "{{ ip_type }}"
           ip: "{{ vm_ip }}"
           netmask: 255.255.255.0
       wait_for_ip_address: no
