@@ -5,10 +5,10 @@ datacenter: Datacenter
 cluster: Cluster
 template: dev-template7.6
 datastore: vsanDatastore
-dvswitch_name: INF-VDS
-nic_device: vmxnet3
-ip_type: static
 
 #Network
 net_name: VLAN213-10.13.213.0_24
 vlan: 213
+nic_device: vmxnet3
+ip_type: static
+dvswitch_name: INF-VDS
