@@ -48,7 +48,7 @@
  #         - 10.0.11.110
  #         - 10.1.1.30
 
-#      customization_spec: rhel-customization
+      customization_spec: rhel-customization
     delegate_to: localhost
     tags:
     - clone
