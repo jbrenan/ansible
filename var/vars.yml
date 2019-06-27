@@ -4,8 +4,10 @@ folder: /Templates
 datacenter: Datacenter
 cluster: Cluster
 template: dev-template7.6
-datastore: /datacenter/templates
-
+datastore: vsanDatastore
+dvswitch_name: INF-VDS
+nic_device: vmxnet3
+ip_type: static
 
 #Network
 net_name: VLAN213-10.13.213.0_24
